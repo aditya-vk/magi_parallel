@@ -1,12 +1,12 @@
 # magi_parallel
 building code to parallelize magi
 
--[] Write simple multiprocess program - Learning
+1. Write simple multiprocess program - Learning
 
--[] Write simple multithreaded program - Learning
+2. Write simple multithreaded program - Learning
 
--[] Kill thread vs. Kill process
+3. Kill thread vs. Kill process
 
--[] Compare performance over extended programs (continuous running for some cycles) - Testing
+4. Compare performance over extended programs (continuous running for some cycles) - Testing
 
--[] From previous results, start magi.
+5. From previous results, start magi.
