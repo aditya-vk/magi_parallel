@@ -141,3 +141,5 @@ if __name__ == '__main__':
 # and the child can select that for reading. It will report ready for reading when the parent end is closed. 
 # This requires your child to run a mail loop, or at least make regular calls to select. 
 # If you don't want that, you'll need some manager process to do it, but then when that one is killed, things break again.
+
+# Good source: https://pymotw.com/2/multiprocessing/index.html#module-multiprocessing
