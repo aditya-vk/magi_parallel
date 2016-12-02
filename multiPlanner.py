@@ -6,7 +6,7 @@
 
 
 # import logging
-# from abc import abstractmethod
+from abc import abstractmethod
 # from actions.base import ActionError
 # from actions.base import CheckpointError
 # from actions.Sequence import SequenceAction, SequenceSolution
@@ -15,6 +15,7 @@
 # from Queue import Queue
 import multiprocessing
 import time
+
 
 # logger = logging.getLogger(__name__)
 
@@ -59,9 +60,9 @@ class Planner(object):
         """
         pass
 
-
-  def _build_tree(action, G, node_map, parent_nodes=[]):
-      G = nx.read_gpickle("G.gpickle")
+def _build_tree(action, G, node_map, parent_nodes=[]):
+    import networkx as nx
+    G = nx.read_gpickle("G.gpickle")
 
 # def _build_tree(action, G, node_map, parent_nodes=[]):
 #     """
@@ -115,11 +116,11 @@ class ParallelPlanner(Planner):
         # avoid unnecessary computation
         self.frustrated = False     
 
-    # def __str__(self):
-    #     if self.use_frustration:
-    #         return 'frustration'
-    #     else:
-    #         return 'dfs'
+    def __str__(self):
+         if self.use_frustration:
+             return 'frustration'
+         else:
+             return 'parallel'
 
     def plan_action(self, env, action, output_queue=None):
         # """
@@ -127,7 +128,7 @@ class ParallelPlanner(Planner):
         # @param action The starting HGPC action to plan from
         # @param output_queue A queue of solutions to put out when a checkpoint is reached
         # """
-        # import networkx as nx
+        import networkx as nx
         self.G = nx.DiGraph(format='svg')
         _build_tree(action, self.G, self.node_map)
 
