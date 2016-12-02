@@ -131,8 +131,8 @@ class ParallelPlanner(Planner):
         self.G = nx.DiGraph(format='svg')
         _build_tree(action, self.G, self.node_map)
 
-        # if self.monitor is not None:
-        #     self.monitor.set_graph(self.G, self.node_map)
+        if self.monitor is not None:
+            self.monitor.set_graph(self.G, self.node_map)
 
         # self.output_queue = output_queue
         
