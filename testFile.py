@@ -3,7 +3,6 @@
 import matplotlib.pyplot as plt
 import networkx as nx
 from multiPlanner import *
-from monitor import *
 
 #env = nx.read_gpickle("G.gpickle")
 
@@ -11,8 +10,8 @@ from monitor import *
 #plt.subplot(111)
 #nx.draw(env, pos)
 
-monitor = ActionMonitor()
-planner = ParallelPlanner(monitor=monitor)
+
+planner = ParallelPlanner()
 
 planner.plan_action(None, None)
 

@@ -63,6 +63,8 @@ class Planner(object):
 def _build_tree(action, G, node_map, parent_nodes=[]):
     import networkx as nx
     G = nx.read_gpickle("G.gpickle")
+    for n in G.nodes():
+        node_map[str(n)] = None
 
 # def _build_tree(action, G, node_map, parent_nodes=[]):
 #     """
@@ -131,6 +133,7 @@ class ParallelPlanner(Planner):
         import networkx as nx
         self.G = nx.DiGraph(format='svg')
         _build_tree(action, self.G, self.node_map)
+        print self.node_map
 
         if self.monitor is not None:
             self.monitor.set_graph(self.G, self.node_map)
