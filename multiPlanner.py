@@ -60,6 +60,9 @@ class Planner(object):
         pass
 
 
+  def _build_tree(action, G, node_map, parent_nodes=[]):
+      G = nx.read_gpickle("G.gpickle")
+
 # def _build_tree(action, G, node_map, parent_nodes=[]):
 #     """
 #     Recursively expand a Sequence action
@@ -125,8 +128,8 @@ class ParallelPlanner(Planner):
         # @param output_queue A queue of solutions to put out when a checkpoint is reached
         # """
         # import networkx as nx
-        # self.G = nx.DiGraph(format='svg')
-        # _build_tree(action, self.G, self.node_map)
+        self.G = nx.DiGraph(format='svg')
+        _build_tree(action, self.G, self.node_map)
 
         # if self.monitor is not None:
         #     self.monitor.set_graph(self.G, self.node_map)
