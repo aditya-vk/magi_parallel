@@ -10,3 +10,7 @@ building code to parallelize magi
 4. Compare performance over extended programs (continuous running for some cycles) - Testing
 
 5. From previous results, start magi.
+
+How to release memory when a process is closed?
+"call close() followed by wait() on your Pool object."
+https://docs.python.org/3/library/multiprocessing.html#module-multiprocessing.pool
